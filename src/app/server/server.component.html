@@ -1,1 +1,18 @@
 <h2 class="display-1">Navbar</h2>
+
+<div class="form-group">
+    <!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+    <input type="text" class="form-control" [(ngModel)]="serverName">
+</div>
+
+
+<button class="btn btn-primary" [disabled]="allowBtn" (click)="onCreateServer()">Disabling ME</button>
+
+<p *ngIf="serverCreate; else noServer">{{ serverCreation }}</p>
+<ng-template #noServer>
+    <p>Server Not Created</p>
+</ng-template>
+<p [ngStyle]="{backgroundColor:getColor()}" [ngClass]="{online:status === 'Online'}">Port No Of the Application is
+    {{ portNo }} and Application Status is
+    {{ status }}</p>
+<!-- <app-root></app-root> -->

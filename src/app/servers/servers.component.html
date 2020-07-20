@@ -1,0 +1,16 @@
+<p>servers works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-primary" (click)="displayNumbers()">Display Numbers</button>
+            <p *ngIf="showSeceret">Seceret Number (SPN)</p>
+
+
+            <div *ngFor="let logs of log; let i = index" [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'} "
+                [ngClass]="{'white-text' : i >= 4}">
+                {{logs}}
+            </div>
+        </div>
+
+    </div>
+</div>
