@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{element.name}}</h5>
+        <p class="card-text">
+            <strong *ngIf='element.type=="server"' style="color: red;"> {{element.content}}</strong>
+            <strong *ngIf="element.type=='blueprint'">{{element.content}}</strong>
+        </p>
+    </div>
+</div>
