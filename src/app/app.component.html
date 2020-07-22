@@ -14,7 +14,12 @@
   </app-cockpit>
   <div class="row">
     <div class="col-md-12">
-      <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement"></app-server-element>
+      <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement">
+        <p class="card-text">
+          <strong *ngIf="serverElement.type=='server'" style="color: red;"> {{serverElement.content}}</strong>
+          <strong *ngIf="serverElement.type=='blueprint'">{{serverElement.content}}</strong>
+        </p>
+      </app-server-element>
     </div>
   </div>
 </div>
